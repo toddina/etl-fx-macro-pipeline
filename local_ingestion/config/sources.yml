@@ -1,0 +1,24 @@
+databricks:
+  credentials:
+    profile_name: DATABRICKS_PROFILE
+    credentials_file: credentials.json
+  path_volume:
+    historical: /Volumes/workspace/default/landing_zone/forex_historical_data/
+    daily: /Volumes/workspace/default/landing_zone/forex_daily_data/
+    monthly: /Volumes/workspace/default/landing_zone/macro_finance_monthly_data/
+
+forex:
+  provider: fastforex
+  base_currency: EUR
+  endpoints:
+    historical: https://api.fastforex.io/historical?
+    latest: https://api.fastforex.io/fetch-all?
+  days: 14
+  credentials:
+    api_key_name: FASTFOREX_API_KEY
+    credentials_file: credentials.json
+  retry:
+    max_retries: 3
+    retry_delay: 5
+
+
